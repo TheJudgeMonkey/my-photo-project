@@ -1,2 +1,50 @@
-<h1>Welcome to the MyPhotoApp</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1 class="text-center p-3">MyPhotoApp</h1>
+<% if current_user %>
+  <h3>Welcome: <%= current_user.email %></h3>
+<% else %>
+  <div class="card bg-dark text-white">
+    <%= image_tag("sea.jpg", class: "d-block w-100") %>
+    <div class="card-img-overlay">
+      <h5 class="card-title top-margin">Welcome to the MyPhotoApp!</h5>
+      <p class="card-text">"You'll love managing your Photos with our application. Sign up!"</p>
+    </div>
+  </div>
+  <div class="row container">
+    <div class="col-sm-6 p-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Gold Plan</h5>
+          <p class="badge bg-primary text-wrap">
+            Price: <span class="text-decoration-line-through">$60</span> $5
+          </p>
+          <ul class="card-text">
+            <li>Unlimited Image Uploads</li>
+            <li>Responsive design</li>
+            <li>Access anywhere</li>
+            <li>Free coffee every year</li>
+            <li>Worse than the Platinum Plan</li>
+          </ul>
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary sign-up' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 p-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Platinum Plan</h5>
+          <p class="badge bg-primary text-wrap">
+            Price: <span class="text-decoration-line-through">$100</span> $10
+          </p>
+          <ul class="card-text">
+            <li>Unlimited Image Uploads</li>
+            <li>Responsive design</li>
+            <li>Access anywhere</li>
+            <li class='extra'>Unlimited projects!</li>
+            <li class='extra'>Free coffee every month!</li>
+          </ul>
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary sign-up' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
