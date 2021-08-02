@@ -62,7 +62,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "my_photo_project_production"
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'https://mighty-ocean-77688.herokuapp.com/', :protocol => 'https' }
+  config.action_mailer.default_url_options = { :host => 'mighty-ocean-77688.herokuapp.com', :protocol => 'https' }
 
   config.action_mailer.perform_caching = false
 
